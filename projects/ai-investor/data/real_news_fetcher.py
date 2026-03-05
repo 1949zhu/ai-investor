@@ -20,35 +20,35 @@ class RealNewsFetcher:
     
     def fetch_sina_realtime(self, limit=30):
         """
-        新浪财经 - 实时新闻
-        完全免费，无需 API Key
+        新浪财经 - 7x24 小时新闻
         """
         try:
-            # 新浪财经 7x24 小时滚动新闻
-            url = "https://feed.mix.sina.com.cn/api/roll/get"
-            params = {
-                'pageid': '100',
-                'lid': '2404',  # 财经频道
-                'num': limit,
-                'page': '1'
+            url = "https://finance.sina.com.cn/7x24"
+            headers = {
+                'User-Agent': 'Mozilla/5.0',
+                'Accept': 'text/html'
             }
             
-            r = requests.get(url, params=params, timeout=10)
+            r = requests.get(url, headers=headers, timeout=10)
             if r.status_code == 200:
-                data = r.json()
+                # 简单解析 HTML
                 news_list = []
+                import re
+                matches = re.findall(r'<li class="item.*?>.*?<h3>(.*?)</h3>.*?<span class="date">(.*?)</span>', r.text, re.DOTALL)
                 
-                for item in data.get('data', {}).get('list', []):
+                for title, time in matches[:limit]:
+                    title = re.sub(r'<.*?>', '', title).strip()
                     news_list.append({
-                        'title': item.get('title', ''),
-                        'content': item.get('description', ''),
+                        'title': title,
+                        'content': title,
                         'source': '新浪财经',
-                        'time': item.get('ctime', ''),
-                        'url': item.get('url', '')
+                        'time': time.strip(),
+                        'url': ''
                     })
                 
-                self._save_cache(news_list)
-                return news_list
+                if news_list:
+                    self._save_cache(news_list)
+                    return news_list
         except Exception as e:
             print(f"新浪财经失败：{e}")
         

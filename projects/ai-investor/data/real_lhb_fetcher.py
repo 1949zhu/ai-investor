@@ -53,9 +53,9 @@ class RealLHBFetcher:
                         'change': item.get('f3', 0),
                         'volume': item.get('f4', 0),
                         'amount': item.get('f17', 0),
-                        'buy_amount': item.get('f21', 0),
-                        'sell_amount': item.get('f22', 0),
-                        'net_amount': item.get('f23', 0),
+                        'buy_amount': item.get('f21', 0) / 100000000,  # 转为亿
+                        'sell_amount': item.get('f22', 0) / 100000000,
+                        'net_amount': item.get('f23', 0) / 100000000,  # 转为亿
                         'reason_code': item.get('f29', '')
                     })
                 
