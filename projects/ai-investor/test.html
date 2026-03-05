@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI 投资智能体 - 测试页面</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: -apple-system, sans-serif; 
+            padding: 40px;
+            min-height: 100vh;
+        }
+        .test-card {
+            background: linear-gradient(135deg, #1c1c1e, #2c2c2e);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        h1 { color: #30d158; margin-bottom: 20px; font-size: 32px; }
+        .status { 
+            display: inline-block; 
+            padding: 8px 16px; 
+            background: rgba(48,209,88,0.2); 
+            border: 1px solid #30d158;
+            border-radius: 20px;
+            color: #30d158;
+            margin-bottom: 20px;
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-label { color: #86868b; }
+        .data-value { color: #30d158; font-weight: 600; }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #30d158, #24b346);
+            color: #000;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="test-card">
+        <div class="status">✅ 服务器连接成功</div>
+        <h1>🤖 AI 投资智能体</h1>
+        
+        <div class="data-row">
+            <span class="data-label">服务器状态</span>
+            <span class="data-value">运行中</span>
+        </div>
+        <div class="data-row">
+            <span class="data-label">访问时间</span>
+            <span class="data-value" id="time">--</span>
+        </div>
+        <div class="data-row">
+            <span class="data-label">数据库大小</span>
+            <span class="data-value">24.0 MB</span>
+        </div>
+        <div class="data-row">
+            <span class="data-label">问题数量</span>
+            <span class="data-value">10 个</span>
+        </div>
+        <div class="data-row">
+            <span class="data-label">能力缺口</span>
+            <span class="data-value">27 个</span>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: rgba(10,132,255,0.1); border-radius: 12px; border-left: 3px solid #0a84ff;">
+            <strong style="color: #0a84ff;">💡 如果看到这个页面：</strong>
+            <p style="color: #86868b; margin-top: 10px; line-height: 1.6;">
+                说明服务器正常运行！<br>
+                完整界面请访问：<a href="/" style="color: #30d158;">返回主页</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('zh-CN');
+        
+        // 测试 API
+        fetch('/api/status')
+            .then(r => r.json())
+            .then(d => {
+                console.log('API Data:', d);
+            })
+            .catch(e => console.error('API Error:', e));
+    </script>
+</body>
+</html>

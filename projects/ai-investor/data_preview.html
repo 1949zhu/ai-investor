@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI 投资智能体 - 数据预览</title>
+    <style>
+        body { background: #000; color: #fff; font-family: -apple-system, sans-serif; padding: 40px; }
+        h1 { color: #30d158; }
+        .card { background: #1c1c1e; border-radius: 20px; padding: 24px; margin: 20px 0; }
+        .metric { display: inline-block; margin: 10px 20px 10px 0; }
+        .metric-value { font-size: 36px; color: #30d158; font-weight: 700; }
+        .metric-label { color: #86868b; font-size: 13px; }
+        .item { padding: 12px; margin: 8px 0; background: #2c2c2e; border-radius: 12px; border-left: 3px solid #30d158; }
+        .item.warning { border-left-color: #ff9f0a; }
+        .item.error { border-left-color: #ff453a; }
+    </style>
+</head>
+<body>
+    <h1>🤖 AI 投资智能体 - 数据预览</h1>
+    <p style="color:#86868b;">直接读取数据库，无需 Flask 服务器</p>
+    
+    <div class="card">
+        <h2>📊 系统状态</h2>
+        <div class="metric">
+            <div class="metric-value" id="decisions">--</div>
+            <div class="metric-label">决策记录</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value" id="problems">--</div>
+            <div class="metric-label">问题</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value" id="gaps">--</div>
+            <div class="metric-label">能力缺口</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value" id="improvements">--</div>
+            <div class="metric-label">改进记录</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value" id="db-size">--</div>
+            <div class="metric-label">数据库 (MB)</div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>📝 最近决策</h2>
+        <div id="decisions-list">加载中...</div>
+    </div>
+    
+    <div class="card">
+        <h2>⚠️ 问题列表</h2>
+        <div id="problems-list">加载中...</div>
+    </div>
+    
+    <div class="card">
+        <h2>🧠 能力缺口</h2>
+        <div id="gaps-list">加载中...</div>
+    </div>
+    
+    <script>
+        // 由于浏览器安全限制，无法直接读取 SQLite
+        // 这里显示说明
+        document.getElementById('decisions').textContent = '10';
+        document.getElementById('problems').textContent = '10';
+        document.getElementById('gaps').textContent = '27';
+        document.getElementById('improvements').textContent = '3';
+        document.getElementById('db-size').textContent = '24.0';
+        
+        document.getElementById('decisions-list').innerHTML = `
+            <div class="item">2026-03-05: 买入中国平安 (601318.SH) → 待验证</div>
+            <div class="item">2026-03-05: CIO 投资决策报告 → 待验证</div>
+            <div class="item">2026-03-04: 买入贵州茅台 → 收益 5.2%</div>
+        `;
+        
+        document.getElementById('problems-list').innerHTML = `
+            <div class="item warning">新闻数据源失效，无法获取市场新闻 (medium)</div>
+            <div class="item warning">龙虎榜数据缺失 (high)</div>
+        `;
+        
+        document.getElementById('gaps-list').innerHTML = `
+            <div class="item">龙虎榜数据接入 - 机构动向是重要参考</div>
+            <div class="item">研报数据接入 - 券商研报提供专业分析</div>
+            <div class="item">更完善的回测框架 - 验证策略有效性</div>
+        `;
+    </script>
+    
+    <div class="card" style="margin-top: 30px;">
+        <h2>💡 说明</h2>
+        <p style="color:#86868b; line-height: 1.6;">
+            这是静态数据预览页面，显示的是固定数据。<br>
+            要查看实时数据，请访问 <a href="http://localhost:5000" style="color:#0a84ff;">http://localhost:5000</a><br>
+            如果 Flask 界面没有数据，请按 <strong>Ctrl+Shift+R</strong> 强制刷新浏览器缓存。
+        </p>
+    </div>
+</body>
+</html>

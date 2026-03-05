@@ -1,0 +1,36 @@
+{
+  "exported_at": "2026-03-05T20:22:05.610899",
+  "market_regime": {
+    "regime": "震荡市",
+    "confidence": 0.75,
+    "start_date": "2026-03-05"
+  },
+  "lessons_learned": [
+    {
+      "lesson": "均值回归策略在趋势市中表现不佳，需增加趋势过滤",
+      "category": "策略",
+      "confidence": 0.8,
+      "created_at": "2026-03-05 12:22:05"
+    }
+  ],
+  "recent_decisions": [
+    {
+      "date": "2026-03-05",
+      "market_state": "震荡市",
+      "decision": "买入中国平安 (601318.SH)",
+      "reasoning": "低估值 + 高股息，防御性强",
+      "outcome": "待验证",
+      "reflection": null
+    }
+  ],
+  "strategy_performance": [
+    {
+      "strategy_name": "均值回归",
+      "test_date": "2026-03-05",
+      "return_rate": 0.5252,
+      "sharpe_ratio": 2.06,
+      "max_drawdown": 0.0155,
+      "win_rate": 0.842
+    }
+  ]
+}

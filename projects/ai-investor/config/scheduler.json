@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "check_interval_hours": 4,
+  "full_analysis_interval_hours": 24,
+  "alert_enabled": true,
+  "last_check": "2026-03-05T22:00:28.306286",
+  "last_full_analysis": "2026-03-05T22:00:28.306289",
+  "run_count": 15
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI 投资智能体 - 简单测试</title>
+<style>
+body { background: #000; color: #fff; font-family: sans-serif; padding: 40px; text-align: center; }
+.box { background: #1c1c1e; border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto; border: 2px solid #30d158; }
+h1 { color: #30d158; font-size: 36px; }
+p { color: #86868b; font-size: 18px; }
+.btn { display: inline-block; padding: 15px 30px; background: #30d158; color: #000; border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="box">
+<h1>✅ 连接成功!</h1>
+<p>如果你看到这个页面，说明服务器正常运行。</p>
+<p style="margin-top: 30px;">
+<strong>服务器地址:</strong> http://localhost:5000<br>
+<strong>当前时间:</strong> <span id="time"></span>
+</p>
+<a href="/" class="btn">打开完整界面 →</a>
+</div>
+<script>
+document.getElementById('time').textContent = new Date().toLocaleString('zh-CN');
+// 测试 API
+fetch('/api/status').then(r=>r.json()).then(d=>console.log('API OK:',d.problems?.length||0,'problems')).catch(e=>console.error('API Error:',e));
+</script>
+</body>
+</html>

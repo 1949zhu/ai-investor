@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "autonomous_mode": true,
+  "check_interval_hours": 4,
+  "auto_adjust_threshold": 0.6,
+  "alert_on_discovery": true,
+  "last_check": null,
+  "active_hypotheses": [],
+  "current_strategy": "default"
+}

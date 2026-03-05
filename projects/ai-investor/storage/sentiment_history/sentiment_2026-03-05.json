@@ -1,0 +1,79 @@
+[
+  {
+    "sentiment": 0.5,
+    "label": "中性",
+    "confidence": 0.8,
+    "date": "2026-03-05",
+    "source": "news"
+  },
+  {
+    "sentiment": 0.5,
+    "label": "中性",
+    "confidence": 0.8,
+    "date": "2026-03-05",
+    "source": "news"
+  },
+  {
+    "sentiment": 0.5,
+    "label": "中性",
+    "confidence": 0.8,
+    "date": "2026-03-05",
+    "source": "realtime_news",
+    "news_count": 5,
+    "news_sources": [
+      "模拟数据"
+    ]
+  },
+  {
+    "overall_sentiment": 0.5,
+    "sentiment_label": "谨慎乐观",
+    "confidence": 0.75,
+    "hot_topics": [
+      {
+        "topic": "A 股高开",
+        "sentiment": 0.7,
+        "mentions": 5
+      },
+      {
+        "topic": "流动性",
+        "sentiment": 0.6,
+        "mentions": 3
+      }
+    ],
+    "risk_alerts": [
+      "关注成交量变化",
+      "注意板块轮动"
+    ],
+    "summary": "市场情绪整体偏乐观，建议关注成交量配合情况",
+    "date": "2026-03-05",
+    "source": "news"
+  },
+  {
+    "overall_sentiment": 0.5,
+    "sentiment_label": "谨慎乐观",
+    "confidence": 0.75,
+    "hot_topics": [
+      {
+        "topic": "A 股高开",
+        "sentiment": 0.7,
+        "mentions": 5
+      },
+      {
+        "topic": "流动性",
+        "sentiment": 0.6,
+        "mentions": 3
+      }
+    ],
+    "risk_alerts": [
+      "关注成交量变化",
+      "注意板块轮动"
+    ],
+    "summary": "市场情绪整体偏乐观，建议关注成交量配合情况",
+    "date": "2026-03-05",
+    "source": "realtime_news",
+    "news_count": 10,
+    "news_sources": [
+      "模拟数据"
+    ]
+  }
+]

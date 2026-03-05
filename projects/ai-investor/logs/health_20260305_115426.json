@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-03-05T11:54:25.947043",
+  "overall_status": "warning",
+  "checks": {
+    "database": {
+      "status": "ok",
+      "path": "D:\\openclaw\\workspace\\projects\\ai-investor\\storage\\ashare.db",
+      "size_mb": 24.0,
+      "tables": [
+        "daily_quotes",
+        "stock_info",
+        "backtest_results"
+      ],
+      "stock_count": 5486,
+      "quote_count": 193449
+    },
+    "strategies": {
+      "status": "ok",
+      "file_count": 2,
+      "files": [
+        "generator.py",
+        "llm_generator.py"
+      ]
+    },
+    "reports": {
+      "status": "ok",
+      "total_count": 8,
+      "latest": {
+        "name": "investment_report_20260305_115302.md",
+        "time": "2026-03-05T11:53:02.870333",
+        "age_hours": 0.0
+      }
+    },
+    "logs": {
+      "status": "ok",
+      "file_count": 1
+    },
+    "news_api": {
+      "status": "warning",
+      "message": "新闻 API 无数据返回"
+    },
+    "llm_service": {
+      "status": "ok",
+      "provider": "dashscope",
+      "model": "qwen-plus"
+    }
+  }
+}

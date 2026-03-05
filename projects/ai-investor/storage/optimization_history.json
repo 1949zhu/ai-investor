@@ -1,0 +1,261 @@
+[
+  {
+    "iteration": 1,
+    "strategy": {
+      "id": "MR001",
+      "name": "均值回归策略",
+      "description": "当股价偏离均线过大时，预期会回归均值",
+      "logic": "\n            核心逻辑：\n            1. 计算 N 日移动平均线\n            2. 当股价低于均线 - X% 时，视为超卖，买入\n            3. 当股价高于均线 + Y% 时，视为超买，卖出\n            4. 设置止损 Z%\n            ",
+      "entry_conditions": [
+        "close < MA20 * 0.95",
+        "volume > MA_volume * 1.5"
+      ],
+      "exit_conditions": [
+        "close > MA20 * 1.05",
+        "close < entry_price * 0.92"
+      ],
+      "position_sizing": {
+        "method": "fixed_percent",
+        "percent": 0.1
+      },
+      "risk_management": {
+        "stop_loss": 0.08,
+        "take_profit": 0.15,
+        "max_position": 0.3
+      },
+      "parameters": {
+        "ma_period": 20,
+        "entry_threshold": 0.05,
+        "exit_threshold": 0.05
+      },
+      "status": "pending_backtest"
+    },
+    "results": {
+      "strategy_id": "MR001",
+      "strategy_name": "均值回归策略",
+      "initial_capital": 1000000,
+      "final_value": 1037227.0,
+      "total_return": 0.037227,
+      "total_return_pct": 3.7227,
+      "annual_return": 0.037227,
+      "annual_return_pct": 3.7227,
+      "sharpe_ratio": 0.7006958885280844,
+      "max_drawdown": 0.085299025002822,
+      "max_drawdown_pct": 8.5299025002822,
+      "win_rate": 0.41379310344827586,
+      "win_rate_pct": 41.37931034482759,
+      "trade_count": 29,
+      "total_trades": 61,
+      "evaluation": "ACCEPTABLE"
+    },
+    "evaluation": {
+      "overall_score": 0.7608975226362906,
+      "issues": [
+        {
+          "type": "low_return",
+          "severity": "high",
+          "current": 0.037227,
+          "target": 0.15,
+          "description": "收益率偏低 (3.7% < 15%)"
+        },
+        {
+          "type": "low_sharpe",
+          "severity": "medium",
+          "current": 0.7006958885280844,
+          "target": 0.8,
+          "description": "风险收益比偏低 (夏普 0.70 < 0.8)"
+        },
+        {
+          "type": "low_win_rate",
+          "severity": "medium",
+          "current": 0.41379310344827586,
+          "target": 0.45,
+          "description": "胜率偏低 (41.4% < 45%)"
+        }
+      ],
+      "suggestions": [
+        "考虑放宽买入条件或提高止盈比例",
+        "考虑优化止损策略或降低仓位",
+        "考虑优化选股条件，提高信号质量"
+      ],
+      "metrics_analysis": {
+        "drawdown": "good"
+      }
+    },
+    "timestamp": "2026-03-04T23:25:41.088353"
+  },
+  {
+    "iteration": 2,
+    "strategy": {
+      "id": "MR001",
+      "name": "均值回归策略",
+      "description": "当股价偏离均线过大时，预期会回归均值",
+      "logic": "\n            核心逻辑：\n            1. 计算 N 日移动平均线\n            2. 当股价低于均线 - X% 时，视为超卖，买入\n            3. 当股价高于均线 + Y% 时，视为超买，卖出\n            4. 设置止损 Z%\n            ",
+      "entry_conditions": [
+        "close < MA20 * 0.95",
+        "volume > MA_volume * 1.5"
+      ],
+      "exit_conditions": [
+        "close > MA20 * 1.05",
+        "close < entry_price * 0.92"
+      ],
+      "position_sizing": {
+        "method": "fixed_percent",
+        "percent": 0.08000000000000002
+      },
+      "risk_management": {
+        "stop_loss": 0.08,
+        "take_profit": 0.18,
+        "max_position": 0.27
+      },
+      "parameters": {
+        "ma_period": 24,
+        "entry_threshold": 0.04000000000000001,
+        "exit_threshold": 0.05
+      },
+      "status": "pending_backtest",
+      "optimization_notes": "放宽买入条件，提高止盈目标; 降低仓位，优化风险收益比; 优化选股条件，提高信号质量",
+      "version": 2
+    },
+    "results": {
+      "strategy_id": "MR001",
+      "strategy_name": "均值回归策略",
+      "initial_capital": 1000000,
+      "final_value": 1037227.0,
+      "total_return": 0.037227,
+      "total_return_pct": 3.7227,
+      "annual_return": 0.037227,
+      "annual_return_pct": 3.7227,
+      "sharpe_ratio": 0.7006958885280844,
+      "max_drawdown": 0.085299025002822,
+      "max_drawdown_pct": 8.5299025002822,
+      "win_rate": 0.41379310344827586,
+      "win_rate_pct": 41.37931034482759,
+      "trade_count": 29,
+      "total_trades": 61,
+      "evaluation": "ACCEPTABLE"
+    },
+    "evaluation": {
+      "overall_score": 0.7608975226362906,
+      "issues": [
+        {
+          "type": "low_return",
+          "severity": "high",
+          "current": 0.037227,
+          "target": 0.15,
+          "description": "收益率偏低 (3.7% < 15%)"
+        },
+        {
+          "type": "low_sharpe",
+          "severity": "medium",
+          "current": 0.7006958885280844,
+          "target": 0.8,
+          "description": "风险收益比偏低 (夏普 0.70 < 0.8)"
+        },
+        {
+          "type": "low_win_rate",
+          "severity": "medium",
+          "current": 0.41379310344827586,
+          "target": 0.45,
+          "description": "胜率偏低 (41.4% < 45%)"
+        }
+      ],
+      "suggestions": [
+        "考虑放宽买入条件或提高止盈比例",
+        "考虑优化止损策略或降低仓位",
+        "考虑优化选股条件，提高信号质量"
+      ],
+      "metrics_analysis": {
+        "drawdown": "good"
+      }
+    },
+    "timestamp": "2026-03-04T23:25:41.534894"
+  },
+  {
+    "iteration": 3,
+    "strategy": {
+      "id": "MR001",
+      "name": "均值回归策略",
+      "description": "当股价偏离均线过大时，预期会回归均值",
+      "logic": "\n            核心逻辑：\n            1. 计算 N 日移动平均线\n            2. 当股价低于均线 - X% 时，视为超卖，买入\n            3. 当股价高于均线 + Y% 时，视为超买，卖出\n            4. 设置止损 Z%\n            ",
+      "entry_conditions": [
+        "close < MA20 * 0.95",
+        "volume > MA_volume * 1.5"
+      ],
+      "exit_conditions": [
+        "close > MA20 * 1.05",
+        "close < entry_price * 0.92"
+      ],
+      "position_sizing": {
+        "method": "fixed_percent",
+        "percent": 0.06400000000000002
+      },
+      "risk_management": {
+        "stop_loss": 0.08,
+        "take_profit": 0.216,
+        "max_position": 0.24300000000000002
+      },
+      "parameters": {
+        "ma_period": 28,
+        "entry_threshold": 0.03200000000000001,
+        "exit_threshold": 0.05
+      },
+      "status": "pending_backtest",
+      "optimization_notes": "放宽买入条件，提高止盈目标; 降低仓位，优化风险收益比; 优化选股条件，提高信号质量",
+      "version": 3
+    },
+    "results": {
+      "strategy_id": "MR001",
+      "strategy_name": "均值回归策略",
+      "initial_capital": 1000000,
+      "final_value": 1037227.0,
+      "total_return": 0.037227,
+      "total_return_pct": 3.7227,
+      "annual_return": 0.037227,
+      "annual_return_pct": 3.7227,
+      "sharpe_ratio": 0.7006958885280844,
+      "max_drawdown": 0.085299025002822,
+      "max_drawdown_pct": 8.5299025002822,
+      "win_rate": 0.41379310344827586,
+      "win_rate_pct": 41.37931034482759,
+      "trade_count": 29,
+      "total_trades": 61,
+      "evaluation": "ACCEPTABLE"
+    },
+    "evaluation": {
+      "overall_score": 0.7608975226362906,
+      "issues": [
+        {
+          "type": "low_return",
+          "severity": "high",
+          "current": 0.037227,
+          "target": 0.15,
+          "description": "收益率偏低 (3.7% < 15%)"
+        },
+        {
+          "type": "low_sharpe",
+          "severity": "medium",
+          "current": 0.7006958885280844,
+          "target": 0.8,
+          "description": "风险收益比偏低 (夏普 0.70 < 0.8)"
+        },
+        {
+          "type": "low_win_rate",
+          "severity": "medium",
+          "current": 0.41379310344827586,
+          "target": 0.45,
+          "description": "胜率偏低 (41.4% < 45%)"
+        }
+      ],
+      "suggestions": [
+        "考虑放宽买入条件或提高止盈比例",
+        "考虑优化止损策略或降低仓位",
+        "考虑优化选股条件，提高信号质量"
+      ],
+      "metrics_analysis": {
+        "drawdown": "good"
+      }
+    },
+    "timestamp": "2026-03-04T23:25:41.980721"
+  }
+]

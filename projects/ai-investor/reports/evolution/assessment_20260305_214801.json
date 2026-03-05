@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-03-05T21:48:01.361116",
+  "decision_quality": {
+    "status": "no_data",
+    "win_rate": 0.5
+  },
+  "strategy_valid": {
+    "effective": null,
+    "reason": "no_data"
+  },
+  "anomalies": [],
+  "needs_adjustment": false,
+  "confidence": 0.6
+}

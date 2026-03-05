@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-03-05T22:58:23.695172",
+  "decision_quality": {
+    "status": "analyzed",
+    "total_decisions": 5,
+    "winning": 4,
+    "win_rate": 0.8,
+    "quality": "good"
+  },
+  "strategy_valid": {
+    "effective": null,
+    "reason": "no_data"
+  },
+  "anomalies": [],
+  "needs_adjustment": false,
+  "confidence": 0.7
+}
